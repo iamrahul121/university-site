@@ -1,0 +1,761 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.common-section {
+    padding: 30px 10px;
+    text-align: center;
+}
+
+.common-section h2 {
+    font-size: 36px;
+}
+
+.common-section p {
+    font-size: 15px;
+}
+
+.common {
+    padding: 50px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+}
+
+/* ---------------------------------------------------------------- */
+
+.header {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(/img/banner.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 6%;
+
+}
+
+.left-nav img {
+    width: 170px;
+    cursor: pointer;
+}
+
+.right-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.right-nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.right-nav ul li {
+    width: auto;
+    list-style: none;
+    position: relative;
+}
+
+.right-nav ul li::after {
+    content: " ";
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(255, 1, 1);
+    position: absolute;
+    transition: 0.5s;
+}
+
+.right-nav ul li:hover::after {
+    width: 100%;
+}
+
+.right-nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+.right-nav .fa-solid {
+    font-size: 25px;
+    color: white;
+    display: none;
+    cursor: pointer;
+}
+
+/* ---------------------------- Hero-Section ------------------ */
+
+.hero-section {
+    width: 100;
+    padding-top: 10%;
+    text-align: center;
+    color: white;
+}
+
+.hero-section h1 {
+    font-size: 50px;
+}
+
+.hero-section p {
+    font-size: 15px;
+    padding: 20px;
+    line-height: 25px;
+}
+
+.btn {
+    margin: 20px 0px;
+}
+
+.hero-section a {
+    display: inline-block;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px 30px;
+    background-color: transparent;
+    transition: 0.5s;
+    border: 1px solid white;
+    position: relative;
+    z-index: 2;
+    font-weight: 300;
+}
+
+.hero-section a::after {
+    content: "";
+    width: 50px;
+    height: 2px;
+    top: 50%;
+    right: -20%;
+    background: white;
+    position: absolute;
+    z-index: 1;
+}
+
+.hero-section a::before {
+    content: "";
+    width: 50px;
+    height: 2px;
+    top: 50%;
+    left: -20%;
+    background: white;
+    position: absolute;
+    z-index: 1;
+}
+
+.hero-section a:hover {
+    background-color: tomato;
+    border: 1px solid tomato;
+    z-index: 2;
+}
+
+/* ------------------------ Media Quries -------------------- */
+@media only screen and (max-width: 780px) {
+    .common-section h2 {
+        font-size: 35px;
+    }
+
+    .right-nav ul {
+        width: 250px;
+        height: 100vh;
+        background-color: tomato;
+        position: absolute;
+        top: 0;
+        right: 0;
+        flex-direction: column;
+        padding: 35px 20px;
+        display: none;
+        z-index: 3;
+    }
+
+    .right-nav ul li {
+        margin: 20px 10px;
+        font-size: 20px;
+        width: 25%;
+    }
+
+    .right-nav .fa-solid {
+        display: block;
+        z-index: 4;
+    }
+
+    .hero-section h1 {
+        font-size: 35px;
+    }
+
+    .hero-section p {
+        font-size: 14px;
+    }
+
+    .hero-section a {
+        font-size: 15px;
+    }
+
+    .hero-section {
+        padding: 35% 1%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .common-section h2 {
+        font-size: 30px;
+    }
+}
+
+/* ----------------------------- Courses Section ------------------------------ */
+.course-section {
+    margin-top: 40px;
+}
+
+.courses-col {
+    width: 400px;
+    padding: 20px 20px;
+    box-shadow: 0px 5px 5px 0px rgb(164, 164, 164);
+}
+
+.courses-col h3 {
+    padding: 0px 0px 20px 0px;
+}
+
+/* ---------------------- Campus Section --------------------- */
+
+.campus-col {
+    width: 400px;
+    position: relative;
+}
+
+.layer h3 {
+    font-size: 25px;
+    color: white;
+    opacity: 0;
+}
+
+.campus-col .layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: rgb(255, 1, 1, 0.5);
+    transition: 0.5s;
+    border-radius: 10px;
+}
+
+.campus-col:hover .layer {
+    height: 99%;
+}
+
+.campus-col:hover .layer h3 {
+    opacity: 1;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%);
+}
+
+.campus-col img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* ------------------------------ Media Quries -------------------------------- */
+@media only screen and (max-width: 780px) {
+    .courses {
+        flex-direction: column;
+    }
+
+    .courses-col {
+        width: 75%;
+        margin: 15px 0px;
+    }
+
+    .campus {
+        flex-direction: column;
+
+    }
+
+    .campus-col {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .courses-col {
+        width: 90%;
+        padding: 10px 20px;
+    }
+
+    .campus-col {
+        width: 95%;
+    }
+}
+
+/* ------------------------ Faculity Section -------------------- */
+
+.facilities-col {
+    width: 370px;
+    text-align: left;
+    padding: 20px 20px;
+}
+
+.facilities-col img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.facilities-col h3 {
+    font-size: 18px;
+    padding: 10px 0px;
+}
+
+.facilities-col p {
+    font-size: 14px;
+}
+
+/* -------------------------testimonial ------------------ */
+.testimonial-col {
+    width: 400px;
+    padding: 20px 20px;
+}
+
+.testimonial-user img {
+    width: 15%;
+    text-align: center;
+    justify-content: center;
+    margin: 0px 20px;
+    border-radius: 5px;
+}
+
+.testimonial-user {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.testimonial-col p {
+    padding: 10px 10px;
+    text-align: left;
+}
+
+.testimonial-col .fa-solid,
+.fa-regular {
+    color: tomato;
+}
+
+/* -------------------offer Section --------------------- */
+
+.offer-section {
+    width: 100%;
+    padding: 100px 0px;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url(/img/banner2.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.offer-section h2 {
+    font-size: 30px;
+    padding: 25px 0px;
+}
+
+.offer-section a {
+    font-size: 15px;
+    padding: 10px 35px;
+    margin: 20px 0px;
+}
+
+.about {
+    padding: 20px;
+    text-align: center;
+}
+
+.about h3 {
+    font-size: 20px;
+    padding: 20px 0px;
+}
+
+.about p {
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.about-section .fa-brands {
+    padding: 0px 10px;
+    color: rgb(255, 77, 46);
+    cursor: pointer;
+}
+
+.copyright {
+    padding: 10px 0px;
+}
+
+.copyright .fa-solid {
+    color: tomato;
+}
+
+.newbtn:hover {
+    color: white;
+}
+/* ------------------------- Media Quries --------------------------- */
+
+@media only screen and (max-width: 780px) {
+    .facilities {
+        flex-direction: column;
+    }
+
+    .testimonial {
+        flex-direction: column;
+        padding: 10px 10px;
+    }
+
+    .testimonial-col p {
+        text-align: center;
+    }
+}
+
+/* ===================================== About Us => CSS ============================ */
+
+.about-us-header {
+    width: 100%;
+    height: 50vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/img/background.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.about-us {
+    color: white;
+    margin-top: 8%;
+    text-align: center;
+}
+
+.about-us h1 {
+    font-size: 45px;
+}
+
+.about-desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+
+.about-us-left {
+    width: 40%;
+    text-align: left;
+    color: black;
+}
+
+.about-us-left h2 {
+    font-size: 35px;
+}
+
+.about-us-left a {
+    color: black;
+    border: 1.5px solid tomato;
+}
+
+.about-us-right {
+    width: 40%;
+}
+
+.about-us-right img {
+    width: 100%;
+}
+
+/* ========================= Media Quries ============================ */
+
+@media only screen and (max-width: 1000px) {
+    .about-us-left {
+        width: 50%;
+        padding: 0px 25px;
+    }
+
+    .about-us-right {
+        width: 50%;
+        padding: 0px 25px;
+    }
+
+    .about-desc {
+        gap: 30px;
+    }
+ 
+}
+
+@media only screen and (max-width: 750px) {
+    .about-us {
+        margin-top: 12%;
+    }
+
+    .about-us-header {
+        height: 40vh;
+    }
+
+    .about-desc {
+        flex-direction: column;
+        padding: 50px 20px;
+    }
+   
+
+    .about-us-left {
+        width: 100%;
+    }
+
+    .about-us-right {
+        width: 100%;
+    }
+
+    .about-us-left h2 {
+        font-size: 33px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .about-us h1{
+        font-size: 33px;
+        padding-top: 18%;
+    }
+    .about-us-left h2 {
+        font-size: 28px;
+    }
+    .about-us-left {
+        padding: 0px 10px;
+    }
+    .about-us-right {
+        padding: 0px 10px;
+    }
+    .about-desc p{
+        padding: 10px 0px;
+    }
+    .about-desc {
+        flex-direction: column;
+        padding: 40px 10px;
+    }
+}
+
+/* ============================ Blog Section => CSS ======================= */
+.blog {
+    padding: 80px 20px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: justify;
+    gap: 20px;
+}
+
+.blog-left {
+    width: 50%;
+}
+
+.blog-left img {
+    width: 100%;
+}
+
+.blog-left h2 {
+    padding: 10px 0px;
+}
+
+.blog-left p {
+    padding: 10px 0px;
+    line-height: 25px;
+    word-spacing: 3px;
+}
+
+.blog-right {
+    width: 25%;
+    text-align: center;
+}
+
+.blog-right h3 {
+    padding: 7px 15px;
+    background-color: tomato;
+    width: 100%;
+    font-size: 20px;
+    color: white;
+}
+
+.blog-post {
+    display: flex;
+    align-items: center;
+    padding: 11px 10px;
+    justify-content: space-between;
+}
+
+.comment-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px;
+    border: 1px solid wheat;
+    margin: 25px 0px;
+}
+
+.comment-box input,
+textarea {
+    padding: 10px 20px;
+    margin: 15px 0px;
+    outline: none;
+    border: none;
+    background-color: rgb(225, 225, 225);
+}
+
+.btn2 {
+    width: 200px;
+    margin: 15px 0px;
+}
+
+.btn2 a {
+    border: 1px solid red;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: red;
+    border-radius: 3px;
+}
+
+/* =========================== Media Quries ============================ */
+
+@media only screen and (max-width: 780px) {
+    .blog-section h1{
+        font-size: 36px;
+    }
+    .blog {
+        flex-direction: column;
+    }
+    .blog-left{
+        width: 100%;
+        padding: 10px 33px;
+    }
+    .blog-right{
+        width: 100%;
+        padding: 10px 33px;
+    }
+}
+@media only screen and (max-width: 500px){
+    .blog-section h1{
+        font-size: 30px;
+    }
+    .blog-left{
+        padding: 10px 10px;
+    }
+    .blog-right{
+        padding: 10px 10px;
+    }
+}
+
+/* ================================== Contact Us ================================== */
+
+.location{
+    width: 100%;
+}
+.location iframe{
+    display: block;
+    width: 85%;
+    margin: 50px auto;
+    border-radius: 10px;
+}
+.contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0px;
+}
+
+.contact-col{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    padding: 20px 0px;
+}
+.contact-col h3{
+    font-size: 22px;
+    font-weight: 300;
+   
+}
+.contact-col .fa-sharp, .fa-solid{
+    padding: 0px 20px;
+    font-size: 25px;
+    color: tomato;
+}
+.contact-left{
+    width: 40%;
+}
+.contact-right{
+    width: 40%;
+}
+.contact-right form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid rgb(255, 182, 182);
+    padding: 20px 15px;
+}
+.contact-right form input{
+    padding: 12px 20px;
+    font-size: 15px;
+    width: 90%;
+    margin: 10px 0px;
+    outline: none;
+    border: none;
+    background-color: aliceblue;
+}
+.contact-right form textarea{
+    width: 90%;
+    background-color: aliceblue;
+    font-size: 16px;
+}
+.contact-right form button{
+    width: 200px;
+    padding: 10px 20px;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid rgb(255, 146, 127);
+    background-color: aliceblue;
+    font-size: 16px;
+    margin: 15px 0px;
+}
+
+/* ========================= Media Quries =========================== */
+@media only screen and (max-width: 780px){
+    .contact{
+        flex-direction: column;
+        padding: 20px 20px;
+    }
+    .contact-us h1{
+        padding-top: 0px;
+        font-size: 35px;
+    }
+    .contact-col{
+        justify-content: center;
+    }
+    .contact-left{
+        width: 80%;
+        
+    }
+    .contact-right{
+        width: 100%;
+        margin: 20px 20px;
+    }
+}
+@media only screen and (max-width: 450px){
+    .contact{
+        padding: 20px 10px;
+    }
+}
